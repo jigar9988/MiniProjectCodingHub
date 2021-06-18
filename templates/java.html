@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Website</title>
+        <link rel="stylesheet" href="../static/codes.css">
+        <link rel="stylesheet" href="../static/prism.css">
+        <link rel="stylesheet" href="../static/style.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <header id="head" class="h-nav">
+            <h1>CodingHub</h1>
+            <div class="left visible">
+                <ul class="navlist">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/tutorial.html">Tutorial</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="right visible">
+                <input type="search" name="search" id="search" class="ser" placeholder="Search">
+                <button class="head-bt">Search</button>
+            </div>
+            <div class="bar">&equiv;</div>
+            <!-- <div class="time">&times;</div> -->
+        </header>
+        <div class="java-part">
+            <div>
+                <h2>Basic Structure of a Java Program</h2>
+                <pre class="language-java"><code>package com.company; // Groups classes
+public class Main{	// Entrypoint into the application
+    public static void main(String[]args){
+        System.out.println(“Hello World”);
+    }
+}
+            </code></pre>
+            </div>
+        </div>
+        <div class="java-part">
+            <div>
+                <h2>Variables and Data Types in Java </h2>
+                <p>A variable is a container that stores a value.This value can be changed during the execution of the program.Example: int number = 8; (Here, int is a data type, number is the variable name and 8 is the value that it contains/stores).</p>
+                <pre class="language-java"><code>
+package com.company;
+
+public class literals {
+    public static void main(String[] args) {
+        byte age = 34;
+        int age2 = 56;
+        short age3 = 87;
+        long ageDino = 5666666666666L;
+        char ch = 'A';
+        float f1 = 5.6f;
+        double d1 = 4.66;
+
+        boolean a = true;
+        System.out.print(age);
+        String str = "Harry";
+        System.out.println(str);
+
+    }
+}
+                    
+                </code></pre>
+            </div>
+        </div>
+        <div class="java-part">
+            <div>
+                <h2>Getting User Input in Java </h2>
+                <p>In order to read data from the keyboard, Java has a scanner class.
+                    Scanner class has a lot of methods to read the data from the keyboard.</p>
+                <pre class="language-java"><code>package com.company;
+import java.util.Scanner;
+
+public class TakingInput {
+    public static void main(String[] args) {
+        System.out.println("Taking Input From the User");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number 1");
+        int a = sc.nextInt();
+        float a = sc.nextFloat();
+        System.out.println("Enter number 2");
+        int b = sc.nextInt();
+        float b = sc.nextFloat();
+
+        int sum = a +b;
+        float sum = a +b;
+        System.out.println("The sum of these numbers is");
+        System.out.println(sum);
+        boolean b1 = sc.hasNextInt(); // Taking Integer as Input
+        System.out.println(b1);
+        String str = sc.next();
+        String str = sc.nextLine();  // Taking String as Input
+        System.out.println(str);
+
+    }
+}
+                    
+                </code></pre>
+            </div>
+        </div>
+        <div class="java-part">
+            <div>
+                <h2>Operators, Types of Operators & Expressions in Java </h2>
+                <p>Operators are used to perform operations on variables and values.
+                    7 + 11 = 18  
+                    (Here, 7 and 11 are operand and + is the operator and 18 is the result).</p>
+                <pre class="language-java"><code>package com.company;
+
+public class CWH_Ch2_Operators {
+    public static void main(String[] args) {
+
+        // 1. Arithmetic Operators
+        int a = 4;
+        int b = 6 % a; // Modulo Operator
+        // 4.8%1.1 --> Returns Decimal Remainder
+
+        // 2. Assignment Operators
+        int b = 9;
+        b *= 3;
+        System.out.println(b);
+
+        // 3. Comparison Operators
+        System.out.println(64< 6);
+
+        // 4. Logical Operators
+        System.out.println(64>5 && 64>98);
+        System.out.println(64>5 || 64>98);
+
+        // 5. Bitwise Operators
+        System.out.println(2&3);
+}
+                    
+                </code></pre>
+            </div>
+        </div>
+        <div class="java-part">
+            <div>
+                <h2>Introduction to Strings </h2>
+                <p>A string is a sequence of characters. A string is instantiated as follows:String is a class but can be used as a data type.
+                    Strings are immutable and cannot be changed..</p>
+                <pre class="language-java"><code>package com.company;
+import java.util.Scanner;
+
+public class Strings {
+    public static void main(String[] args) {
+        String name = new String("Harry");
+        String name = "Harry";
+        System.out.print("The name is: ");
+        System.out.print(name);
+        int a = 6;
+        float b = 5.6454f;
+        System.out.printf("The value of a is %d and value of b is %8.2f", a, b);
+        System.out.format("The value of a is %d and value of b is %f", a, b);
+        Scanner sc = new Scanner(System.in);
+        String st = sc.next();
+        String st = sc.nextLine();
+        System.out.println(st);
+
+    }
+}
+                    
+                </code></pre>
+            </div>
+        </div>
+        <div class="java-part">
+            <div>
+                <h2>String Methods in Java</h2>
+                <p>String Methods operate on Java Strings. They can be used to find the length of the string, convert to lowercase, etc..</p>
+                <pre class="language-java"><code> Package com.company; 
+
+public class cwh_14_string_methods {
+    public static void main(String[] args) {
+        String name = "Harry";
+        System.out.println(name);
+        int value = name.length();
+        System.out.println(value);
+
+        String lstring = name.toLowerCase();
+        System.out.println(lstring);
+
+        String ustring = name.toUpperCase();
+        System.out.println(ustring);
+
+        String nonTrimmedString = "     Harry     ";
+        System.out.println(nonTrimmedString);
+
+        String trimmedString = nonTrimmedString.trim();
+        System.out.println(trimmedString);
+
+        System.out.println(name.substring(1));
+        System.out.println(name.substring(1,5));
+
+        System.out.println(name.replace('r', 'p'));
+        System.out.println(name.replace("r", "ier"));
+
+        System.out.println(name.startsWith("Har"));
+        System.out.println(name.endsWith("dd"));
+
+        System.out.println(name.charAt(4));
+
+        String modifiedName = "Harryrryrry";
+        System.out.println(modifiedName.indexOf("rry"));
+        System.out.println(modifiedName.indexOf("rry", 4));
+        System.out.println(modifiedName.lastIndexOf("rry", 7));
+
+        System.out.println(name.equals("Harry"));
+        System.out.println(name.equalsIgnoreCase("HarRY"));
+
+        System.out.println("I am escape sequence\tdouble quote");
+
+    }
+}
+                    
+                </code></pre>
+            </div>
+        </div>
+        <footer>
+            copyright &copy; Jigar Trivedi 2021-22
+        </footer>
+    </body>
+    <script src="../static/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+    <script src="../static/prism.js"></script>
+
+</html>

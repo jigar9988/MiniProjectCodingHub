@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Website</title>
+        <link rel="stylesheet" href="../static/codes.css">
+        <link rel="stylesheet" href="../static/prism.css">
+        <link rel="stylesheet" href="../static/style.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <header id="head" class="h-nav">
+            <h1>CodingHub</h1>
+            <div class="left visible">
+                <ul class="navlist">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/tutorial.html">Tutorial</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="right visible">
+                <input type="search" name="search" id="search" class="ser" placeholder="Search">
+                <button class="head-bt">Search</button>
+            </div>
+            <div class="bar">&equiv;</div>
+            <!-- <div class="time">&times;</div> -->
+        </header>
+        <div class="cpp-part">
+            <div>
+                <h2>Variables & Comments in C++ </h2>
+                <p>Variables are containers to store our data. To make it easy to understand, I will give a scenario: to
+                    store water, we use bottles, and to store sugar, we use a box. </p>
+                <pre class="language-cpp"><code>#include<iostream>
+using namespace std;
+
+// This program was created by CodingHub
+/* this is 
+a multi line 
+comment */
+int main(){
+    int sum = 6; // Variable sum
+    cout<< "Hello world"<< sum;
+    return 0;
+} </code></pre>
+            </div>
+        </div>
+        <div class="cpp-part">
+            <div>
+                <h2>Basic Input and Output in C++ </h2>
+                <p>Input stream
+                    In the input stream, the direction of the flow of bytes occurs from the input device (for ex
+                    keyboard) to the main memory.
+                    Output stream
+                    In output stream, the direction of flow of bytes occurs from main memory to the output device (for
+                    ex-display) </p>
+                <pre class="language-cpp"><code># include<iostream>
+using namespace std;
+
+int main()
+{
+    int num1, num2;
+    cout<<"Enter the value of num1:\n"; /* '<<' is called Insertion operator */
+    cin>>num1; /* '>>' is called Extraction operator */
+
+    cout<<"Enter the value of num2:\n"; /* '<<' is called Insertion operator */
+    cin>>num2; /* '>>' is called Extraction operator */
+
+    cout<<"The sum is "<< num1+num2;
+
+    return 0;
+}
+    </code></pre>
+            </div>
+        </div>
+        <div class="cpp-part">
+            <div>
+                <h2>Operators in C++ </h2>
+                <p>Operators in C++
+                    Operators are used for producing output by performing various types of calculations on two or more
+                    inputs. In this lecture, we will see the operators in C++.</p>
+                <pre class="language-cpp"><code>
+#include<iostream>
+using namespace std;
+
+int main(){
+    int a=4, b=5;
+    cout<<"Operators in C++:"<< endl;
+    cout<<"The value of a + b is "<< a+b<< endl;
+    cout<< "The value of a - b is "<< a-b << endl;
+    cout<< "The value of a * b is "<< a*b<< endl;
+    cout<< "The value of a / b is "<< a/b<< endl;
+    cout<< "The value of a % b is "<< a%b<< endl;
+    cout<< "The value of a++ is "<< a++<< endl;
+    cout<< "The value of a-- is "<< a--<< endl;
+    cout<< "The value of ++a is "<< ++a<< endl;
+    cout<< "The value of --a is "<<--a<< endl;
+    cout<< endl;
+    return 0;
+}
+</code></pre>
+            </div>
+        </div>
+        <div class="cpp-part">
+            <div>
+                <h2>If Else Statements in C++</h2>
+                <p>As we have discussed the concepts of the different control structure, If else statements are used to
+                    implement a selection structure </p>
+                <pre class="language-cpp"><code>#include<iostream>
+
+using namespace std;
+
+int main(){
+    int age;
+    cout<< "Tell me your age"<< endl;
+    cin>>age;
+        if((age<18) && (age>0)){
+            cout<<"You can not come to my party"<< endl;
+        }
+        else if(age==18){
+            cout<<"You are a kid and you will get a kid pass to the party"<< endl;
+        }
+        else if(age< 1){
+            cout<< "You are not yet born" << endl;
+        }
+        else{
+        cout<< "You can come to the party"<< endl;
+}</code></pre>
+            </div>
+        </div>
+        <div class="cpp-part">
+            <div>
+                <h2>Switch Case Statements in C++ </h2>
+                <p>Switch Case Statements in C++
+                    In switch-case statements, the value of the variable is tested with all the cases. An example
+                    program for the switch case statement.</p>
+                <pre class="language-cpp"><code>#include<iostream>
+using namespace std;
+
+int main(){
+    int age;
+    cout<< "Tell me your age"<< endl;
+        cin>>age;
+    switch (age)
+    {
+    case 18: 
+        cout<<"You are 18"<< endl;
+        break;
+    case 22: 
+        cout<< "You are 22"<< endl;
+        break;
+    case 2: 
+        cout<< "You are 2"<< endl;
+        break;
+    default:
+    cout<< "No special cases"<< endl;
+        break;
+    }
+    cout<< "Done with switch case";
+    return 0;
+    }
+
+</code></pre>
+            </div>
+        </div>
+        <div class="cpp-part">
+            <div>
+                <h2>Loops in C++ </h2>
+                <p>Vor loop help us to run some specific code repeatedly until the specified condition is me.While loop
+                    helps us to run some specific code repeatedly until the specified condition is me</p>
+                <pre class="language-cpp"><code>#include <iostream>
+
+using namespace std;
+int main()
+{
+    /*Loops in C++:
+    There are three types of loops in C++:
+        1. For loop
+        2. While Loop
+        3. do-While Loop
+    */
+
+    /*For loop in C++*/
+    int i=1;
+    cout<< i;
+    i++;
+
+    Syntax for for loop
+    for(initialization; condition; updation)
+    {
+        loop body(C++ code);
+    }
+
+    for (int i = 1; i < = 40; i++)
+    {
+        /* code */
+        cout<< i << endl;
+    }
+
+    Example of infinite for loop
+    for (int i = 1; 34 < = 40; i++)
+    {
+        /* code */
+        cout<< i << endl;
+    }
+
+    /*While loop in C++ Syntax:*/
+    while(condition)
+    {
+        C++ statements;
+    }
+
+    //Printing 1 to 40 using while loop
+    int i=1;
+    while(i< = 40){
+        cout << i<< endl;
+        i++;
+    }
+
+
+    /* do While loop in C++ Syntax:*/
+    do
+    {
+        C++ statements;
+    }while(condition);        
+    return 0;
+}
+                    </code></pre>
+            </div>
+        </div>
+        <footer>
+            copyright &copy; Jigar Trivedi 2021-22
+        </footer>
+    </body>
+    <script src="../static/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+    <script src="../static/prism.js"></script>
+
+</html>

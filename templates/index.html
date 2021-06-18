@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CodingHub</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/style.css">
+        <link rel="stylesheet" href="../static/prism.css">
+        <link rel="shortcut icon" href="../static/fav2.png" type="image/x-icon">
+    </head>
+
+    <body>
+        <header id="head" class="h-nav">
+            <h1>CodingHub</h1>
+            <div class="left visible">
+                <ul class="navlist">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/tutorial.html">Tutorial</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="right visible">
+                {% if user.is_authenticated %}
+                <ul class="navbar-nav navlist ">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome {{request.user}}
+                        </a>
+                        <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/logout" style="color: black; outline: none;">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                {% else %}
+                <div class="btns">
+                    <button class="head-bt" data-bs-toggle="modal" data-bs-target="#LogInModal">LogIn</button>
+                    <button class="head-bt" data-bs-toggle="modal" data-bs-target="#SignUpModal">SignUp</button>
+                </div>
+                {% endif %}
+            </div>
+            <div class="bar">&equiv;</div>
+            <!-- <div class="time">&times;</div> -->
+        </header>
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        <!-- login Modal -->
+        <div class="modal fade" id="LogInModal" tabindex="-1" aria-labelledby="LogInModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="LogInModal">LogIn to CodingHub</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/login" method="POST">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="loginusername" name="loginusername"
+                                    aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginpassword" name="loginpassword">
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">LogIn</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- signup Modal -->
+        <div class="modal fade" id="SignUpModal" tabindex="-1" aria-labelledby="SignUpModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="SignUpModalLabel">SignUp to CodingHub</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/signup" method="post">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="exampleInputName" class="form-label">Name</label>
+                                <input type="name" class="form-control" id="username" name="username"
+                                    aria-describedby="emailHelp">
+                                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="useremail" name="useremail"
+                                    aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="pass1" name="pass1">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cexampleInputPassword1" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="pass2" name="pass2">
+                            </div>
+                            <button type="submit" class="btn btn-primary">SignUp</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="mid">
+            <div class="mid-left">
+                <h1 class="heading">Hello Guy's Welcome To <br> CodingHub</h1>
+                <h1 class="jumbotron-heading"
+                    style="font-family: 'Courier New', Courier, monospace; font-weight:bold; text-align:center">
+                    <span id="typed"></span>
+                </h1>
+            </div>
+            <div class="mid-right">
+                <div class="img"></div>
+            </div>
+        </div>
+        <section class="info">
+            <div class="cards-home">
+                <div class="card-h">
+                    <img src="../static/img4.jpg" alt="">
+                    Here We provide Computer Programming Tutorial like HTML CSS JavaScript java C++ Php
+                    <button class="btn-home"><a href="/tutorial.html">Tutorials</a></button>
+                </div>
+                <div class="card-h">
+                    <img src="../static/img5.jpg" alt="">
+                    For any Query related programming Language then Contact Us With Yoor Problem
+                    <button class="btn-home"><a href="/contact.html">Contact us</a></button>
+                </div>
+                <div class="card-h">
+                    <img src="../static/img6.jpg" alt="">
+                    Here You Can write Blog Related Programming language as You want TO post.
+                    <button class="btn-home"><a href="/">LogIn</a></button>
+                </div>
+            </div>
+        </section>
+        <footer>
+            copyright &copy; Jigar Trivedi 2021-22
+        </footer>
+    </body>
+    <script src="../static/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script>
+        window.onload = function () {
+            console.log("loaded")
+            var typed = new Typed('#typed', {
+                strings: ["Welcome to CodingHub", "Get CheetSheet Code of All Language", "Learn Python", "Learn CSS", "and other awesome programming concepts with CodingHub"],
+                backSpeed: 15,
+                smartBackspace: true,
+                backDelay: 1500,
+                startDelay: 1300,
+                typeSpeed: 25,
+                loop: true,
+            });
+        };
+    </script>
+
+</html>
